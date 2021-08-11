@@ -8,6 +8,7 @@ This project is created as a personal portfolio, it contains nformation regardin
  - GraphCMS (Store content on cloud)
  - ChakraUI (Using Choc UI components)
  - UrQL (GraphQl CLient)
+ - Github Actions
 ## Available Scripts
 
 In the project directory, you can run:
