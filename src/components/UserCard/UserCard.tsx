@@ -4,7 +4,7 @@ import { MdHeadset, MdLocationOn, MdEmail, MdCheckCircle, MdSettings } from 'rea
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { useQuery } from 'urql';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 
 const UserCard = () => {
@@ -99,6 +99,16 @@ const UserCard = () => {
             <Icon as={MdEmail} h={6} w={6} mr={2} />
             <Link isExternal px={2} fontSize="sm" href={'mailto:parimal.naigaonkar@gmail.com'}>
               parimal.naigaonkar@gmail.com <ExternalLinkIcon />
+            </Link>
+          </Flex>
+          <Flex
+            alignItems="center"
+            mt={4}
+            color={useColorModeValue("gray.700", "gray.200")}
+          >
+            <Icon as={FaLinkedin} h={6} w={6} mr={2} />
+            <Link isExternal px={2} fontSize="sm" href={'https://www.linkedin.com/in/parimaln/'}>
+              LinkedIn <ExternalLinkIcon />
             </Link>
           </Flex>
           <Flex
