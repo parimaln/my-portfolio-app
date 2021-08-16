@@ -114,7 +114,7 @@ const SidebarContent = (props: SidebarProps) => (
             </Link>
             </NavItem>
             <NavItem selected={isSelected(SIDEBAR_ITEMS.OfficialProjects, props.SelectedNav)} onClick={() => props.setSelectedNav(SIDEBAR_ITEMS.OfficialProjects)} icon={HiCollection}>Official Projects</NavItem>
-            <NavItem selected={isSelected(SIDEBAR_ITEMS.PM, props.SelectedNav)} onClick={() => props.setSelectedNav(SIDEBAR_ITEMS.PM)} icon={FaMandalorian}>Product management projects (Udacity)</NavItem>
+            <NavItem selected={isSelected(SIDEBAR_ITEMS.PM, props.SelectedNav)} onClick={() => props.setSelectedNav(SIDEBAR_ITEMS.PM)} icon={FaMandalorian}>Udacity Projects</NavItem>
             <NavItem selected={isSelected(SIDEBAR_ITEMS.PersonalProjects, props.SelectedNav)} onClick={() => props.setSelectedNav(SIDEBAR_ITEMS.PersonalProjects)} icon={HiCollection}>Software Projects</NavItem>
         </Flex>
     </Box>
