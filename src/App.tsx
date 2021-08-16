@@ -1,18 +1,11 @@
-import * as React from "react"
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
   extendTheme,
   ThemeConfig
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import Sidebar from "./SideBar";
-
+import Sidebar from "./components/sidebar/SideBar";
+import { createClient, Provider } from "urql";
+import * as React from "react"
 
 const colors = {
   brand: {
@@ -30,12 +23,24 @@ const colors = {
 };
 
 const config : ThemeConfig = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
 }
+const client = createClient({
+  url: process.env.REACT_APP_BASE_URL ? process.env.REACT_APP_BASE_URL : '',
+  fetchOptions: () => {
+    const token = process.env.REACT_APP_TOKEN
+    return {
+      headers: { authorization: token ? `Bearer ${token}` : '' },
+    };
+  },
+});
+
 const theme = extendTheme({ colors, config });
 export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Sidebar />
-  </ChakraProvider>
+  <Provider value={client}>
+    <ChakraProvider theme={theme}>
+      <Sidebar />
+    </ChakraProvider>
+  </Provider>
 )
